@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniro</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .slider-navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            margin: 0 5px;
+            background-color: #e0e0e0;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        
+        .nav-dot.active {
+            background-color: #a07936;
+            border-color: #a07936;
+        }
+        .add-to-cart {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            bottom: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #d4a373;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+           
+        }
+        .product-actions {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            border-top: 1px solid #e0e0e0;
+            background-color: #f9f9f9;
+        }
+        .product-actions span {
+            cursor: pointer;
+            color: #888;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .product-actions img {
+            width: 20px;
+            height: 20px;
+        }
+       
+        </style>
+   
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" alt="Furniro Logo">
+                Furniro
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#"><img src="images/user-icon.png" alt="User Icon"></a>
+                <a href="#"><img src="images/search-icon.png" alt="Search Icon"></a>
+                <a href="#"><img src="images/heart-icon.png" alt="Heart Icon"></a>
+                <a href="#"><img src="images/cart-icon.png" alt="Cart Icon"></a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h3>New Arrival</h3>
+                <h1>Discover Our New Collection</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.</p>
+                <a href="#" class="btn">BUY NOW</a>
+            </div>
+        </section>
+        <section class="browse-range">
+            <h2>Browse The Range</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="range-cards">
+                <div class="card">
+                    <img src="images/dining.jpg" alt="Dining">
+                    <h3>Dining</h3>
+                </div>
+                <div class="card">
+                    <img src="images/living.jpg" alt="Living">
+                    <h3>Living</h3>
+                </div>
+                <div class="card">
+                    <img src="images/bedroom.jpg" alt="Bedroom">
+                    <h3>Bedroom</h3>
+                </div>
+               
+                
+            </div>
+        </section>
+        <section class="products">
+            <h2>Our Products</h2>
+            <div class="product-grid">
+              
+                <div class="product-card" style="position: relative;">
+                    <div class="discount" >-30%</div>
+                    <img src="images/product1.png" alt="Syltherine">
+
+                    <div class="product-info">
+                        <h3>Syltherine</h3>
+                        <p>Stylish cafe chair</p>
+                        <span class="price">Rp 2.500.000</span> &nbsp;&nbsp;<span class="strikethrough-text">Rp 35.00.000 </span>
+                        
+
+                    </div>
+                </div>
+
+                <div class="product-card">
+                <div>    <img src="images/product2.png" alt="Leviosa">
+                    <button class="add-to-cart" id="add-to-cart" >Add to cart</button>
+                    <p class="product-actions">
+                        <span><img src="images/gridicons_share (2).png" alt="Share Icon"> Share</span>
+                        <span><img src="images/Group (1).png" alt="Compare Icon"> Compare</span>
+                        <span><img src="images/Vector.png" alt="Like Icon"> Like</span>
+                    </p>
+                </div>
+                    
+                    <div class="product-info">
+                        <h3>Leviosa</h3>
+                        <p>Stylish cafe chair</p>
+                        <span class="price">Rp 2.500.000</span> 
+                        
+
+                    </div>
+                  
+                </div>
+                <div class="product-card">
+                    <div class="discount" >-50%</div>
+                    <img src="images/product3.png" alt="Lolito">
+                    <div class="product-info">
+                        <h3>Lolito</h3>
+                        <p>Luxury big sofa</p>
+                        <span class="price">Rp 7.000.000</span>&nbsp;&nbsp;<span class="strikethrough-text">Rp 14.00.000 </span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="discount" style="background-color: rgb(46, 229, 168);">New</div>
+                    <img src="images/product4.png" alt="Respira">
+                    <div class="product-info">
+                        <h3>Respira</h3>
+                        <p>Outdoor bar table and stool</p>
+                        <b>Rp 500.000</b>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="images/product5.png" alt="Grifo">
+                    <div class="product-info">
+                        <h3>Grifo</h3>
+                        <p>Night lamp</p>
+                        <span class="price">Rp 1.500.000</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="discount" style="background-color: rgb(46, 229, 168);" >New</div>
+                    <img src="images/product6.png" alt="Muggo">
+                    <div class="product-info">
+                        <h3>Muggo</h3>
+                        <p>Small mug</p>
+                        <span class="price">Rp 500.000</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="discount" >-50%</div>
+                    <img src="images/product7.png" alt="Pingky">
+                    <div class="product-info">
+                        <h3>Pingky</h3>
+                        <p>Cute bed set</p>
+                        <span class="price">Rp 7.000.000</span>&nbsp;&nbsp;<span class="strikethrough-text">Rp 14.00.000 </span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="discount" style="background-color: rgb(46, 229, 168);">New</div>
+                    <img src="images/product8.png" alt="Potty">
+                    <div class="product-info">
+                        <h3>Potty</h3>
+                        <p>Minimalist flower pot</p>
+                        <span class="price">Rp 500.000</span>
+                    </div>
+                </div>
+            </div>
+            <a href="#" id="shop" class="btn1">Show More</a>
+        </section>
+    </main>
+
+    <!-- rooms section -->
+    <div class="container">
+        <div class="text-section">
+            <h1>50+ Beautiful rooms inspiration</h1>
+            <p>Our designers already made a lot of beautiful <br>prototypes of rooms that inspire you</p>
+            <button class="explore-button">Explore More</button>
+        </div>
+        <div class="image-slider">
+            <div class="slide">
+                <img src="images/room1.png" alt="Room Image 1">  <span>➔</span> 
+              
+                <div class="slide-text">
+                    <h2>01 &mdash; Bed Room</h2>
+                    <h3>Inner Peace</h3>
+            
+                </div>
+               
+            </div>
+            <div class="slider-navigation" style="padding-top: 550px; padding-right:30px; ">
+                <span class="nav-dot active"></span>
+                <span class="nav-dot"></span>
+                <span class="nav-dot"></span>
+                <span class="nav-dot"></span>
+            </div>
+            <div class="slide">
+                <img src="images/room2.png" alt="Room Image 2">
+            </div>
+           
+        </div>
+       
+        </div>
+        
+       
+   
+    <!-- Product Section -->
+    
+    <section class="section">
+        <div class="gallery">
+            <h5 style="text-align: center; color:#616161;">Share your setup with</h5>
+            <h1 style="width: 356px;text-align: center;
+height: 48px;
+top: 3538px;
+left: 525px;
+margin-left:425px;
+font-family: Poppins;
+font-size: 40px;
+font-weight: 700;
+
+text-align: center;
+
+"> #FuniroFurniture</h1>
+          <div class="main" style="margin-left: -10vh;">
+            <!-- Leftimgs -->
+            <div class="left_imgs">
+              <span style="display: flex">
+                <div class="item1">
+                  <img src="images/1.png" alt="Workspace" class="image" style="width: 60vw;height: 50vh;" />
+                </div>
+                <div class="item2">
+                  <img src="images/6.png" alt="Chair" class="image" style="margin-top: 20vh; height: 30vh;width: 90vw;"/>
+                </div>
+              </span>
+    
+              <span style="display: flex;gap: 10;">
+                <div class="item3">
+                  <img src="images/2.png" alt="Table" class="image" style=""/>
+                </div>
+                <div class="item3">
+                  <img src="images/9.png" alt="Table" class="image" />
+                </div>
+              </span>
+            </div>
+            <!-- Leftimgs -->
+    
+            <!-- centerimgs -->
+            <div class="center_imgs">
+              <div class="item3">
+                <img src="images/8.png" alt="Table" class="image" />
+              </div>
+            </div>
+            <!-- centerimgs -->
+    
+            <!-- rightimgs -->
+            <div class="right_imgs">
+              <span style="display: flex">
+                <div class="item1">
+                  <img src="images/5.png" alt="Workspace" class="image" />
+                </div>
+                <div class="item2">
+                  <img src="images/7.png" alt="Chair" class="image" />
+                </div>
+              </span>
+    
+              <span style="display: flex">
+                <div class="item3">
+                  <img src="images/3.png" alt="Table" class="image" />
+                </div>
+                <div class="item3">
+                  <img src="images/4.png" alt="Table" class="image" />
+                </div>
+              </span>
+            </div>
+            <!-- rightimgs -->
+          </div>
+        </div>
+      </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section address-section">
+                <h3>Funiro.</h3>
+                <address>
+                    400 University Drive Suite 200 Coral Gables,<br>
+                    FL 33134 USA
+                </address>
+            </div>
+            <div class="footer-section">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="#">Payment Options</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Privacy Policies</a></li>
+                </ul>
+            </div>
+            <div class="footer-section newsletter-section">
+                <h4>Newsletter</h4>
+                <form action="#">
+                    <input type="email" placeholder="Enter Your Email Address">
+                    <button type="submit">SUBSCRIBE</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p> 2023 Funiro. All rights reserved</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('shop').addEventListener('click', function() {
+            window.location.href = 'shop.html';
+        });
+        document.getElementById('add-to-cart').addEventListener('click', function() {
+            window.location.href = 'cart_sidebar.html';
+        });
+    </script>
+</body>
+</html>
