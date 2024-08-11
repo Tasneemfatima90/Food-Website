@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart sidebar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+       
+        
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            justify-content: center;
+            
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            color: #9F9F9F;
+        }
+        
+       
+        
+        .content {
+            padding: 20px 0;
+            margin-left: 80px;
+            margin-right: 50px;
+            color: #9F9F9F;
+        }
+        
+        .content-tab {
+            display: none;
+        }
+        
+        .content-tab.active {
+            display: block;
+        }
+        
+        .images {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .image {
+            flex: 1;
+            margin: 0 10px;
+        }
+        
+        .image img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .cart-icon {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .shopping-cart-container {
+            width: 300px;
+            position: fixed;
+            right: 20px;
+            top: 60px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: none;
+            flex-direction: column;
+        }
+        
+        .shopping-cart-container h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .cart-item img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .item-info {
+            flex: 1;
+            margin-left: 10px;
+        }
+        
+        .item-info p {
+            margin: 0;
+        }
+        
+        
+        .subtotal {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        
+        .cart-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .cart-buttons button {
+           
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" alt="Furniro Logo">
+                Furniro
+            </div>
+            <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#"><img src="images/user-icon.png" alt="User Icon"></a>
+                <a href="#"><img src="images/search-icon.png" alt="Search Icon"></a>
+                <a href="#"><img src="images/heart-icon.png" alt="Heart Icon"></a>
+                <a href="#"><img src="images/cart-icon.png" alt="Cart Icon" id="cart-icon" style="cursor: pointer;"></a>
+            </div>
+        </nav>
+    </header>
+    <div class="shopping-cart-container" id="shopping-cart">
+        <h2>Shopping Cart </h2><hr style="color: #9F9F9F;">
+        <div class="cart-item" style="padding-top: 10px;">
+            <img src="images/Group 146.png" alt="Asgaard sofa">
+            <div class="item-info">
+                <p>Asgaard sofa</p>
+                <p>1 x <span style="color:#B88E2F ;">Rs. 250,000.00</span><i class="fa fa-times" style="padding-left: 40px;"></i></p>
+            </div>
+            
+        </div>
+        <div class="cart-item">
+            <img src="images/Group 146 (1).png" alt="Coandian Wood">
+            <div class="item-info">
+                <p>Coandian Wood</p>
+                <p>1 x <span style="color: 
+#B88E2F;">Rs. 20,000.00</span> <i class="fa fa-times" style="padding-left: 40px;"> </i></p>
+            </div>
+        </div>
+        <div class="subtotal" style="padding-top: 80px;">
+            <p>Subtotal</p>
+            <p> Rs. 270,000.00</p>
+        </div><br><hr style="color: #9F9F9F;"><br>
+        <div class="cart-buttons" style="gap: 5px; " >
+            <button style="width: Hug (118px)px;
+            height: Hug (30px)px;
+            
+            
+            border-radius: 50px 50px 50px 50px;
+            border: 1px 0px 0px 0px;
+            opacity: 0px;
+            ">Cart</button>
+            <button style="width: Hug (118px)px;
+            height: Hug (30px)px;
+            
+        
+            border-radius: 50px 50px 50px 50px;
+            border: 1px 0px 0px 0px;
+            opacity: 0px;
+            ">Checkout</button>
+            <button style="width: Hug (40px)px;
+            height: Hug (20px)px;
+            
+            
+            border-radius: 50px 50px 50px 50px;
+            border: 1px 0px 0px 0px;
+            opacity: 0px;
+            ">Comparison</button>
+        </div>
+    </div>
+   
+    <div class="back">
+        <a href="#" style="color: #9F9F9F; margin-left: 35px;">Home</a>
+        <span class="separator">></span>
+        <a href="#" style="color: #9F9F9F">Shop</a>
+        <span class="separator">></span>
+        <span>|  &nbsp;&nbsp;&nbsp; Asgaard sofa</span>
+    </div>
+    
+    <div class="single">
+        <div class="product-thumbnails">
+            <img src="images/Group 107.png" alt="Thumbnail 1" class="selected" >
+            <img src="images/Group 96.png" alt="Thumbnail 2" >
+            <img src="images/Group 98.png" alt="Thumbnail 3">
+            <img src="images/Group 96.png" alt="Thumbnail 4" >
+           
+        </div>
+        <div class="product-main-image">
+            <img id="mainImage" src="images/Asgaard sofa 3.png" alt="Main Product Image">
+        </div>
+        <div class="product-details">
+            <h1>Asgaard Sofa</h1>
+            <div class="price" style="color: #9F9F9F;">Rs. 250,000.00</div>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span style="color: #9F9F9F;">5 Customer Reviews</span>
+            </div>
+            <div class="description">
+                Setting the bar as one of the  loudest speakers in its class, the <br>Kilburn is a compact, stout-hearted hero with a well-balanced <br>audio which boasts a clear midrange and extended highs for a <br>sound.
+            </div>
+            <label for="size" style="color: #9F9F9F;"> Size</label><br><br>
+            <div class="options">
+                <div class="size-options">
+                    
+                    <div class="size-option selected">L</div>
+                    <div class="size-option" >XL</div>
+                    <div class="size-option" >XS</div>
+                </div>
+                <br>
+                <label for="color" style="color: #9F9F9F;">Color</label><br><br>
+                <div class="color-options">
+                    <div class="color-option selected"style="background-color: #816DFA;"></div>
+                    <div class="color-option" style="background-color: #000000"></div>
+                    <div class="color-option"  style="background-color: #B88E2F;"></div>
+                </div>
+            </div>
+           
+            <div class="quantity-selector">
+                <div class="quantity">
+                    <span class="number " style="width: 9px;
+height: 24px;
+top: 696px;
+left: 750px;
+gap: 0px;
+opacity: 0px;
+">-</span>
+                    <span class="number" style="margin-top: 10px;">1</span>
+                    <span class="number" style="width: 11px;
+height: 24px;
+top: 696px;
+left: 835px;
+gap: 0px;
+opacity: 0px;
+">+</span>
+                </div>
+                <button class="btn2 add-to-cart" id="add-to-cart">Add To Cart</button>
+                <button class="btn2 compare" id="compare">+ Compare</button>
+            </div>
+            <br><br><br>
+            <hr style="color: #D9D9D9;">
+            <br><br>
+            <p style="color: #9F9F9F;"> SKU &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;SS001</p><br>
+            <p style="color: #9F9F9F;"> Category &nbsp;&nbsp;:&nbsp;&nbsp;Sofas</p><br>
+            <p style="color: #9F9F9F;"> Tags &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;Sofa, Chair, Home, Shop</p>
+            <div class="share-icons">
+             <span style="color: #9F9F9F;">Share &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</span>   <a href="#"><i class="fab fa-facebook"></i></a>&nbsp;&nbsp;
+                <a href="#"><i class="fab fa-linkedin"></i></a>&nbsp;&nbsp;
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+<br><br>
+    <div class="group">
+        <div class="tabs">
+            <button class="tab" style="color: black;" >Description</button>
+            <button class="tab" >Additional Information</button>
+            <button class="tab">Reviews [5]</button>
+        </div>
+        <div class="content">
+            <div id="description" class="content-tab active">
+                <p>Embodying the raw, wayward spirit of rock 'n' roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.</p>
+                <p>Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.</p>
+                <div class="images">
+                    <div class="image">
+                        <img src="images/Group 107.png" alt="Sofa 1">
+                    </div>
+                    <div class="image">
+                        <img src="images/Group 107.png" alt="Sofa 2">
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+    </div><br><br>
+    <h2 style="text-align:center"> Related Products </h2><br>
+    <div class="product-grid">
+              
+        <div class="product-card" style="position: relative;">
+            <div class="discount" >-30%</div>
+            <img src="images/product1.png" alt="Syltherine">
+
+            <div class="product-info">
+                <h3>Syltherine</h3>
+                <p>Stylish cafe chair</p>
+                <span class="price">Rp 2.500.000</span> &nbsp;&nbsp;<span class="strikethrough-text">Rp 35.00.000 </span>
+                
+
+            </div>
+        </div>
+
+        <div class="product-card">
+        <div>    <img src="images/product2.png" alt="Leviosa">
+            
+        </div>
+            
+            <div class="product-info">
+                <h3>Leviosa</h3>
+                <p>Stylish cafe chair</p>
+                <span class="price">Rp 2.500.000</span> 
+                
+
+            </div>
+          
+        </div>
+        <div class="product-card">
+            <div class="discount" >-50%</div>
+            <img src="images/product3.png" alt="Lolito">
+            <div class="product-info">
+                <h3>Lolito</h3>
+                <p>Luxury big sofa</p>
+                <span class="price">Rp 7.000.000</span>&nbsp;&nbsp;<span class="strikethrough-text">Rp 14.00.000 </span>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="discount" style="background-color: rgb(46, 229, 168);">New</div>
+            <img src="images/product4.png" alt="Respira">
+            <div class="product-info">
+                <h3>Respira</h3>
+                <p>Outdoor bar table and stool</p>
+                <b>Rp 500.000</b>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="btn1" style="margin-left: 500px;">Show More</a>
+<br><br>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section address-section">
+                <h3>Funiro.</h3>
+                <address>
+                    400 University Drive Suite 200 Coral Gables,<br>
+                    FL 33134 USA
+                </address>
+            </div>
+            <div class="footer-section">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="#">Payment Options</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Privacy Policies</a></li>
+                </ul>
+            </div>
+            <div class="footer-section newsletter-section">
+                <h4>Newsletter</h4>
+                <form action="#">
+                    <input type="email" placeholder="Enter Your Email Address">
+                    <button type="submit">SUBSCRIBE</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p> 2023 Funiro. All rights reserved</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('cart-icon').addEventListener('click', function() {
+            const cart = document.getElementById('shopping-cart');
+            if (cart.style.display === 'none' || cart.style.display === '') {
+                cart.style.display = 'flex';
+            } else {
+                cart.style.display = 'none';
+            }
+        });
+        
+            document.getElementById('add-to-cart').addEventListener('click', function() {
+                window.location.href = 'cart.html';
+            });
+            document.getElementById('compare').addEventListener('click', function() {
+                window.location.href = 'product-comparison.html';
+            });
+        </script>
+    
+</body>
+</html>
